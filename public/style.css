@@ -3,3 +3,71 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,500,700,900&display=swap');
+    body{
+        background-color: #dddddd;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    nav{
+        background-color: #090909;
+        color:#a0a0a0;
+        box-shadow: 0px 0px 10px #bebebe;
+    }
+    textarea,input{
+        @apply p-2 rounded-xl;
+        background-color: #e0e0e0;
+        box-shadow: inset 2px 2px 5px #babecc, inset -2px -2px 5px #fff;
+        
+    }
+    input:focus,textarea:focus{
+        outline: none;
+        box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+    }
+    .outer-container{
+        @apply flex flex-col pt-16 self-center w-screen;
+    }
+    .control{
+        @apply flex flex-nowrap flex-row justify-end bottom-0;
+        color: #a0a0a0;
+    }
+    .btn{
+        @apply px-4 py-2 mx-2;
+        border-radius: 29px;
+        background: #e0e0e0;
+        box-shadow:  4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+    }
+    .btn:hover{
+        border-radius: 29px;
+        background: linear-gradient(145deg, #cacaca, #f0f0f0);
+        box-shadow:  4px 4px 8px #bebebe,-4px -4px 8px #ffffff;
+    }
+    .card{
+        @apply p-4 m-6 self-center;
+        width: 95%;
+        max-width:1020px;
+        border-radius: 10px;
+        background: #e0e0e0;
+        box-shadow:  10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+        min-height: 128px;
+        
+    }
+    .nu-text{
+        color: #dddddd;
+        font-size: 6rem;
+        text-shadow: 3px 3px 6px #a1a1a1,-3px -3px 6px #ffffff;
+    }
+    .article-title{
+        @apply text-3xl;
+        color: #808080;
+        text-shadow: 1px 1px 2px #a1a1a1,-1px -1px 2px #ffffff;
+    }
+    .article-desc{
+        @apply text-lg;
+        color: #909090;
+    }
+    .article-content{
+        @apply text-lg;
+        color: #707070;
+    }
+}

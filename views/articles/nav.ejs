@@ -1,0 +1,15 @@
+<nav class="fixed w-full h-14 flex flex-row justify-between">
+    <div class="left-col w-1/4">
+        <a href="http://localhost:5555">
+            <h1 class="my-4 pl-4 font-semibold">OwOb Blog</h1>
+        </a>
+    </div>
+
+    <div class="right-col w-3/4 flex flex-row flex-nowrap justify-end">
+        <h1 class="m-4 ">Hi <%= %>, 歡迎回來</h1>
+        <form action="/logout?_method=DELETE" method="POST">
+            <button class="m-4" type="submit">點我登出</button>
+        </form>
+    </div>
+
+</nav>

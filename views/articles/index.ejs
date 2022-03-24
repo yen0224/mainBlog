@@ -4,43 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="output.css" type="text/css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog</title>
+
+  <title>Simple Blog</title>
 </head>
 
 <body>
-  <div class="container flex flex-col justify-center items-center">
-    <h1 class="mt-4 mb-4">Hi <%=name%>, welcome to my blog</h1>
-    <div class="container">
-      <a href="/articles/new" class="btn btn-success">New Article</a>
+  <style>
+    <%- include('output') %>
+  </style>
+  <%- include('nav') %>
+
+    <div class="outer-container">
+      <!-- <div class="bg-black text-white rounded">
+        <a href="/articles/new"><span>新文章</span></a>
+      </div> -->
       <br>
-      <form action="/logout?_method=DELETE" method="POST">
-        <button class="btn" type="submit">Logout</button>
-      </form>
+      <% articles.forEach(article=> { %>
+        <div class="card ">
+          <div class="card-body">
+            <h2 class="article-title">
+              <a href="articles/<%=article.slug%>">
+                <%= article.title %>
+              </a>
+            </h2>
+            <div class="text-sm text-slate-400 text-muted mb-2">
+              <p>@<%= article.createdAt.toLocaleDateString() %>
+              </p>
+            </div>
+            <hr>
+            <div class="article-desc mb-2">
+              <%= article.description %>
+            </div>
+
+
+            <div class="control">
+              <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
+              <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+              <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+        <% }) %>
+
     </div>
 
-    <% articles.forEach(article=> { %>
-      <div class="card mt-4">
-        <div class="card-body">
-          <h4 class="card-title">
-            <%= article.title %>
-          </h4>
-          <div class="card-subtitle text-muted mb-2">
-            <%= article.createdAt.toLocaleDateString() %>
-          </div>
-          <div class="card-text mb-2">
-            <%= article.description %>
-          </div>
-          <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
-          <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
-          <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-            <button type="submit" class="btn btn-danger">Delete</button>
-          </form>
-        </div>
-      </div>
-      <% }) %>
-  </div>
+
+
 </body>
 
 </html>

@@ -33,7 +33,7 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(express.static(__dirname + 'public'))
+//app.use(express.static(__dirname + 'public'))
 app.get('/', checkAuthenticated, async (req, res) => {
   const articles = await Article.find().sort({ createdAt: 'desc' })
   res.render('articles/index', { articles: articles, name: req.user.name })
