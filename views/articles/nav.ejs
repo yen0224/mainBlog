@@ -6,9 +6,12 @@
     </div>
 
     <div class="right-col w-3/4 flex flex-row flex-nowrap justify-end">
-        <h1 class="m-4 ">Hi <%= %>, 歡迎回來</h1>
+        <h1 class="m-4 ">Hi, 歡迎回來</h1>
+        <a href="/articles/new" class="m-4 hover:bg-gray-500"><span>新文章</span></a>
         <form action="/logout?_method=DELETE" method="POST">
-            <button class="m-4" type="submit">點我登出</button>
+            <button class="m-4 hover:bg-gray-500" type="submit">
+                登入/登出
+            </button>
         </form>
     </div>
 

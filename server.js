@@ -34,9 +34,9 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 //app.use(express.static(__dirname + 'public'))
-app.get('/', checkAuthenticated, async (req, res) => {
+app.get('/', async (req, res) => {
   const articles = await Article.find().sort({ createdAt: 'desc' })
-  res.render('articles/index', { articles: articles, name: req.user.name })
+  res.render('articles/index', { articles: articles })
 })
 
 // login router
@@ -73,6 +73,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
 //logout
 app.delete('/logout', (req, res) => {
   req.logOut()
+
   res.redirect('/login')
 })
 

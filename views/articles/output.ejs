@@ -510,6 +510,8 @@ body{
 }
 
 nav{
+  top: 0px;
+  left:0px;
   background-color: #090909;
   color:#a0a0a0;
   box-shadow: 0px 0px 10px #bebebe;
@@ -528,6 +530,12 @@ textarea,input{
 input:focus,textarea:focus{
   outline: none;
   box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+input:invalid{
+  border-color: #ff0000;
+  -webkit-animation: shake 0.5s;
+          animation: shake 0.5s;
 }
 
 .outer-container {
@@ -602,12 +610,115 @@ input:focus,textarea:focus{
   color: #707070;
 }
 
+.container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin:20px;
+}
+
+.bluebg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top:40px;
+  width:100%;
+  height:420px;
+  background: rgba(255,255,255,0.2);
+  /*box-shadow: 0 5px 45px rgba(0,0,0,0.2);*/
+  border-radius: 10px;
+  box-shadow:10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+}
+
+.bluebg .box {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formBx{
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+  overflow:hidden;
+}
+
+.formBx.active {
+  left: 50%;
+}
+
+.formBx .form {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  overflow:hidden;
+  transition: 0.5s;
+  padding-left:30%;
+}
+
+.formBx .signinform{
+  transition-delay: 0.25s;
+}
+
+.formBx.active .signinform{
+  left:-100%;
+  transition-delay: 0s;
+}
+
+.formBx .signupform{
+  left:100%;
+  transition-delay: 0s;
+}
+
+.formBx.active .signupform{
+  left:0;
+  transition-delay:0.25s;
+}
+
+@keyframe shake{
+  25%{
+    transform: translateX(4px);
+  }
+
+  50%{
+    transform: translateX(-4px);
+  }
+
+  75%{
+    transform: translateX(4px);
+  }
+}
+
 .visible {
   visibility: visible;
 }
 
 .fixed {
   position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-4 {
@@ -744,6 +855,10 @@ input:focus,textarea:focus{
   width: 2.5rem;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -835,6 +950,16 @@ input:focus,textarea:focus{
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -849,6 +974,10 @@ input:focus,textarea:focus{
 
 .pt-28 {
   padding-top: 7rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-sm {
@@ -916,6 +1045,19 @@ input:focus,textarea:focus{
 
 .outline {
   outline-style: solid;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.hover\:bg-gray-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 640px) {
