@@ -25,9 +25,6 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    //encode in utf8
-
-
   },
   sanitizedHtml: {
     type: String,

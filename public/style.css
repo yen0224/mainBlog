@@ -35,7 +35,7 @@
         @apply flex flex-col pt-16 self-center w-screen;
     }
     .control{
-        @apply flex flex-nowrap flex-row justify-end bottom-0;
+        @apply flex flex-nowrap flex-row justify-end bottom-0 self-end;
         color: #a0a0a0;
     }
     .btn{
@@ -74,7 +74,7 @@
         color: #909090;
     }
     .article-content{
-        @apply text-lg;
+        @apply text-lg h-full;
         color: #707070;
     }
     .container{
