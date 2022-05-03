@@ -33,16 +33,20 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 //app.use(express.static(__dirname + 'public'))
+//done
 app.get('/', async (req, res) => {
   const articles = await Article.find().sort({ createdAt: 'desc' })
-  res.render('articles/index', { articles: articles })
+  //res.render('articles/index', { articles: articles })
+  res.send(articles)
 })
 
 // login router
-app.get('/login', checkNotAuthenticated, (req, res) => {
-  res.render('login')
-})
 
 app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   successRedirect: '/',
@@ -50,10 +54,6 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
   failureFlash: true
 }))
 
-//register router
-app.get('/register', checkNotAuthenticated, (req, res) => {
-  res.render('register')
-})
 //register router
 app.post('/register', checkNotAuthenticated, async (req, res) => {
   try {
