@@ -4,7 +4,9 @@
       <div class="card">
         <div class="card-body">
           <h2 class="article-title">
-            <router-link to="/post/{{ post.id }}">{{ post.title }}</router-link>
+            <router-link :to="'/articles/' + post.slug">
+              {{ post.title }}
+            </router-link>
           </h2>
           <div class="text-sm text-slate-400 text-muted mb-2">
             {{ post.created_at }}
