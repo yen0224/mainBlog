@@ -4,8 +4,8 @@
 ## 後端
 - [ ] 建置API接口
     - [x] get: /
-    - [ ] get: /articles
-    - [ ] get: /articles/:id
+    - [x] get: /articles
+    - [x] get: /articles/:id
     - [ ] get: /articles/:id/comments
     - [ ] get: /articles/:id/comments/:id
     - [ ] post: /articles
