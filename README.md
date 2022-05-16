@@ -6,11 +6,8 @@
     - [x] get: /
     - [x] get: /articles
     - [x] get: /articles/:id
-    - [ ] get: /articles/:id/comments
-    - [ ] get: /articles/:id/comments/:id
-    - [ ] post: /articles
-    - [ ] post: /articles/:id/comments
+    - [x] post: /articles
     - [ ] put: /articles/:id
     - [ ] delete: /articles/:id
-    - [ ] delete: /articles/:id/comments/:id
+
     
