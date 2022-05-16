@@ -9,7 +9,7 @@
             </router-link>
           </h2>
           <div class="text-sm text-slate-400 text-muted mb-2">
-            {{ post.created_at }}
+            {{ post.createdAt }}
           </div>
           <hr />
           <div class="article-desc mb-2">
@@ -17,8 +17,6 @@
           </div>
         </div>
       </div>
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.body }}</p>
     </div>
     <button @click="getData">getData</button>
   </div>
@@ -34,7 +32,7 @@ export default {
   methods: {
     async getData() {
       try {
-        let response = await fetch("http://localhost:5555/");
+        let response = await fetch("http://localhost:5555");
         this.posts = await response.json();
         console.log(response);
       } catch (error) {
