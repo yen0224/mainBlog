@@ -8,7 +8,7 @@
     - [x] get: /articles
     - [x] get: /articles/:id
     - [x] post: /articles
-    - [ ] put: /articles/:id
+    - [x] put: /articles/:id
     - [ ] delete: /articles/:id
 
     
