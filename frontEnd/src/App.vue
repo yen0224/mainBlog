@@ -17,7 +17,7 @@
     </div>
   </nav>
   <!-- <button @click="getList">getList</button> -->
-  <router-view class="pt-14" />
+  <router-view />
   <!-- original contents 
     <nav>
     <router-link to="/">Home</router-link> |

@@ -41,10 +41,8 @@
       </div>
     </div>
     <div class="control">
-      <router-link to="/" class="btn btn-secondary">Cancel</router-link>
-      <router-link to="/">
-        <button type="submit" class="btn btn-primary">Save</button>
-      </router-link>
+      <a href="/" class="btn btn-secondary">Cancel</a>
+      <button type="submit" class="btn btn-primary">Save</button>
     </div>
   </div>
 </template>

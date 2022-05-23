@@ -3,7 +3,7 @@ import Home from '../views/HomePage.vue'
 import Auth from '../views/AuthPage.vue'
 import NewArticle from '../views/NewArticle.vue'
 import NotFound from '../views/notFound.vue'
-//import EditArticle from '../views/EditArticle.vue'
+import EditArticle from '../views/EditArticle.vue'
 //import Article from '../views/Article.vue'
 
 const routes = [
@@ -22,6 +22,11 @@ const routes = [
     path: '/new',
     name: 'NewArticle',
     component: NewArticle
+  },
+  {
+    path: '/articles/edit/:id',
+    name: 'EditArticle',
+    component: EditArticle
   },
   {
     path: '/*',
