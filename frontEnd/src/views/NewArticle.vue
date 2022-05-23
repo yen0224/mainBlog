@@ -1,5 +1,7 @@
 <template>
-  <form-field />
+  <form action="http://localhost:5555/articles" method="POST">
+    <form-field />
+  </form>
 </template>
 <script>
 // @ is an alias to /src

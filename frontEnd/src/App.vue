@@ -1,9 +1,9 @@
 <template>
   <nav class="fixed w-full h-14 flex flex-row justify-between">
     <div class="left-col w-1/4">
-      <a href="../">
+      <router-link to="/">
         <h1 class="my-4 pl-4 font-semibold">OwOb Blog</h1>
-      </a>
+      </router-link>
     </div>
 
     <div class="right-col w-3/4 flex flex-row flex-nowrap justify-end">
