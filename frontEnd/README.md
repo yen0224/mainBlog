@@ -5,12 +5,11 @@
 - [ ] RWD
 ### index
 - [x] 隱藏checkbox符號
-- [ ] 更換CSS 的identifier從class為id
 - [ ] drawer 效果
     - [ ] 顏色
-    - [ ] 動畫
+    - [x] 動畫
     - [ ] 動畫時間
-    - [ ] 位置
+    - [x] 位置
 
 # 後端工程
 ## done
