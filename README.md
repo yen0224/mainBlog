@@ -10,5 +10,3 @@
     - [x] post: /articles
     - [x] put: /articles/:id
     - [x] delete: /articles/:id
-
-    
