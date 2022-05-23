@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col">
-    <div v-for="post in posts" v-bind:key="post.id">
+  <div class="flex flex-col pt-14 ease-in-out duration-1000">
+    <div v-for="post in posts" v-bind:key="post.id" class="group">
       <div class="wrap-collabsible">
         <input id="collapsible" class="toggle" type="checkbox" />
-        <label for="collapsible" class="lbl-toggle">
-          <div class="card">
+        <label for="collapsible" class="lbl-toggle text-center">
+          <div class="card mb-0">
             <div class="card-body">
               <h2 class="article-title">
                 {{ post.title }}
@@ -23,16 +23,24 @@
             </div>
           </div>
         </label>
-        <div class="collapsible-content">
-          <div class="content-inner">{{ post.sanitizedHtml }}</div>
+        <div
+          class="
+            collapsible-content
+            transition
+            transform
+            hidden
+            group-hover:block
+          "
+        >
+          <div class="content-inner">
+            <p v-html="post.sanitizedHtml"></p>
+          </div>
           <div class="control">
-            <a :href="'articles/edit/' + post._id" class="btn btn-info"
-              >Edit {{ post.slug }}</a
-            >
+            <a :href="'articles/edit/' + post._id" class="btn btn-info">
+              Edit
+            </a>
             <form
-              :action="
-                'http://localhost:5555/articles/' + post._id + '?_method=DELETE'
-              "
+              :action="'/api/articles/' + post._id + '?_method=DELETE'"
               method="POST"
               class="d-inline"
             >
@@ -59,7 +67,7 @@ export default {
   methods: {
     async getData() {
       try {
-        let response = await fetch("http://localhost:5555");
+        let response = await fetch("http://localhost:5555/");
         this.posts = await response.json();
         console.log(response);
       } catch (error) {
