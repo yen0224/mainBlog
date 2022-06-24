@@ -4,7 +4,7 @@
   </form>
 </template>
 <script>
-// @ is an alias to /src
+//@ is an alias to /src
 import formField from "@/components/formField.vue";
 
 export default {

@@ -25,17 +25,4 @@
   </nav>
   <router-view/> -->
 </template>
-<script>
-export default {
-  methods: {
-    getList() {
-      this.axios.get("localhost:5555").then((response) => {
-        console.log(response.data);
-      });
-      /*this.$http.get(api).then((response) => {
-        console.log(response.data)
-      })*/
-    },
-  },
-};
-</script>
+

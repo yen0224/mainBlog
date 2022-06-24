@@ -7,7 +7,6 @@
       <div class="w-4/5">
         <input
           required
-          value="article.title"
           type="text"
           name="title"
           id="title"
@@ -46,10 +45,4 @@
     </div>
   </div>
 </template>
-//export component
-<script>
-export default {
-  name: "formField",
-  props: ["title", "date", "markdown", "id"],
-};
-</script>
+

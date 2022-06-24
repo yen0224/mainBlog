@@ -1,5 +1,5 @@
 <template>
-  <form action="/articles/{{post.id}}?method=PUT" method="POST">
+  <form action="http://localhost:5555/articles" method="POST">
     <form-field />
   </form>
 </template>
@@ -9,7 +9,7 @@
 import formField from "@/components/formField.vue";
 
 export default {
-  name: "formField",
+  name: "HomeView",
   components: {
     formField,
   },
